@@ -1,11 +1,12 @@
 package com.spring;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Triangle {
 	
 	private List<Point> points;
-
+	
 	public List<Point> getPoints() {
 		return points;
 	}
@@ -15,7 +16,7 @@ public class Triangle {
 	}
 
 	public void draw(){
-		for(Point point : points){
+		for(Point point : this.points){
 			System.out.println("Point : (" + point.getX() + ", " + point.getY() + ")");
 		}
 	}
