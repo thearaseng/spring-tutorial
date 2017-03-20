@@ -13,7 +13,7 @@
 	
 	<bean id="triangle" class="com.spring.Triangle" parent="parenttriangle">
 		<property name="points">
-			<list>
+			<list merge="true">
 				<ref bean="pointC" />
 			</list>
 		</property>
