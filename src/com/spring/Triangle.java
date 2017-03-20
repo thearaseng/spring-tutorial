@@ -1,9 +1,11 @@
 package com.spring;
 
-import java.util.Iterator;
 import java.util.List;
 
-public class Triangle {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+public class Triangle implements InitializingBean, DisposableBean {
 	
 	private List<Point> points;
 	
@@ -19,5 +21,15 @@ public class Triangle {
 		for(Point point : this.points){
 			System.out.println("Point : (" + point.getX() + ", " + point.getY() + ")");
 		}
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("afterPropertiesSet method for Triangle");
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		System.out.println("destory method for Traingle");
 	}
 }
