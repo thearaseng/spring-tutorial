@@ -3,12 +3,20 @@
 
 <beans>
 	<bean id="parenttriangle" class="com.spring.Triangle">
-		<property name="pointA" ref="pointA"></property>
+		<property name="points">
+			<list>
+				<ref bean="pointA" />
+				<ref bean="pointB" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="triangle" class="com.spring.Triangle" parent="parenttriangle">
-		<property name="pointB" ref="pointB"></property>
-		<property name="pointC" ref="pointC"></property>
+		<property name="points">
+			<list>
+				<ref bean="pointC" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="pointA" class="com.spring.Point">
