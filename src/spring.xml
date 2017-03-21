@@ -38,6 +38,6 @@
 		<property name="y" value="6" />
 	</bean>
 	
-	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
 	
 </beans>	
