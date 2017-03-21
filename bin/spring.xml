@@ -20,7 +20,7 @@
 	</bean>
 	
 	<bean id="circle" class="com.spring.Circle">
-		<property name="center" ref="pointA"></property>
+		
 	</bean>
 	
 	<bean id="pointA" class="com.spring.Point">
@@ -37,4 +37,7 @@
 		<property name="x" value="23" />
 		<property name="y" value="6" />
 	</bean>
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	
 </beans>	
