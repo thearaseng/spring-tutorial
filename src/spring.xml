@@ -2,18 +2,28 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd"
+    xmlns:context="http://www.springframework.org/schema/context"
+    >
 	
 	<bean id="circle" class="com.spring.Circle">
 		
 	</bean>
 	
 	<bean id="pointA" class="com.spring.Point">
+		<qualifier value="centerPoint" />
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
 	
-	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
-	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+	<bean id="pointB" class="com.spring.Point">
+		<property name="x" value="45" />
+		<property name="y" value="78" />
+	</bean>
 	
+	<context:annotation-config />
+
 </beans>	
